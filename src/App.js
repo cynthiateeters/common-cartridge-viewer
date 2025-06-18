@@ -8,6 +8,7 @@ import ScreenReaderContent from "@instructure/ui-a11y/lib/components/ScreenReade
 import TextInput from "@instructure/ui-forms/lib/components/TextInput";
 import Button from "@instructure/ui-buttons/lib/components/Button";
 import Heading from "@instructure/ui-elements/lib/components/Heading";
+import Text from "@instructure/ui-elements/lib/components/Text";
 import View from "@instructure/ui-layout/lib/components/View";
 import Responsive from "@instructure/ui-layout/lib/components/Responsive";
 
@@ -123,6 +124,32 @@ export default class App extends Component {
                         }
                       />
                     </View>
+
+                    {/* Alternative file input for clearer file upload option */}
+                    <View as="div" margin="medium" textAlign="center">
+                      <input
+                        type="file"
+                        accept=".imscc,.zip"
+                        onChange={e => {
+                          if (e.target.files[0]) {
+                            this.setState({ file: e.target.files[0] });
+                          }
+                        }}
+                        style={{ display: "none" }}
+                        ref={input => (this.fileInputRef = input)}
+                      />
+                      <Button
+                        variant="secondary"
+                        onClick={() => this.fileInputRef.click()}
+                        margin="0 small 0 0"
+                      >
+                        <Trans>Choose File</Trans>
+                      </Button>
+                      <Text size="small" color="secondary">
+                        <Trans>or use the URL input below</Trans>
+                      </Text>
+                    </View>
+
                     <form onSubmit={this.handleSubmit}>
                       <Flex justifyItems="center" margin="medium none large">
                         <FlexItem>

@@ -35,3 +35,20 @@ TODO.md
 messages.js
 
 /tests/screenshots/2*
+
+# Cartridge scraper outputs and exports
+/scraped-cartridge*/
+/exported-cartridge*/
+/cartridge-export*/
+/static-export*/
+
+/ Individual cartridge builds (any folder ending with these patterns)
+*-cartridge/
+*-export/
+*-scraped/
+
+# Temporary cartridge files
+*.imscc
+*.zip
+/cartridges/
+/temp-cartridge*/

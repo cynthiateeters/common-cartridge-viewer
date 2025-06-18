@@ -26,16 +26,16 @@
     "react-dom": "^16.7.0",
     "react-github-corner": "^2.3.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^2.1.3",
+    "react-scripts": "^5.0.1",
     "whatwg-fetch": "^3.0.0"
   },
   "scripts": {
     "add-locale": "lingui add-locale",
-    "build": "npm run compile && react-scripts build",
+    "build": "npm run compile && craco build",
     "compile": "lingui compile",
     "eject": "react-scripts eject",
     "extract": "lingui extract",
-    "start": "react-scripts start",
+    "start": "craco start",
     "test-all": "testcafe chrome,firefox,safari ./tests/test.* --app \"node_modules/.bin/superstatic -p 5000 ./build -s\"",
     "test-chrome": "testcafe chrome ./tests/test.* --app \"node_modules/.bin/superstatic -p 5000 ./build -s\"",
     "test-firefox": "testcafe firefox ./tests/test.* --app \"node_modules/.bin/superstatic -p 5000 ./build -s\"",
@@ -57,19 +57,27 @@
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
+    "@craco/craco": "^7.1.0",
     "@lingui/cli": "^2.9.2",
     "@lingui/macro": "^2.7.2",
     "babel-core": "^7.0.0-bridge.0",
     "husky": "^1.3.1",
     "lint-staged": "^8.1.0",
+    "path-browserify": "^1.0.1",
     "prettier": "1.15.3",
     "superstatic": "^6.0.4",
     "testcafe": "^1.4.3"
   },
-  "browserslist": [
-    "last 2 version",
-    "ie 11",
-    "not ie <= 10",
-    "not op_mini all"
-  ]
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
