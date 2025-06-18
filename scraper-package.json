@@ -1,0 +1,22 @@
+{
+  "name": "cartridge-scraper",
+  "version": "1.0.0",
+  "description": "Scrape Common Cartridge Viewer to static files",
+  "main": "scraper.js",
+  "scripts": {
+    "scrape:puppeteer": "node scraper-puppeteer.js",
+    "scrape:playwright": "node scraper-playwright.js",
+    "scrape:simple": "node scraper-simple.js",
+    "scrape:all": "npm run scrape:puppeteer && npm run scrape:playwright && npm run scrape:simple"
+  },
+  "dependencies": {
+    "puppeteer": "^21.6.1",
+    "playwright": "^1.40.1",
+    "cheerio": "^1.0.0-rc.12",
+    "axios": "^1.6.2",
+    "fs-extra": "^11.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
