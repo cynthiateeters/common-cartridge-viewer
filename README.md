@@ -8,7 +8,7 @@ View Common Cartridges in the browser. Methods:
 
 ## Demo
 
-[https://common-cartridge-viewer.netlify.com](https://common-cartridge-viewer.netlify.com/)
+[https://cc-viewer.netlify.app](https://cc-viewer.netlify.app)
 
 ## Quick start
 
